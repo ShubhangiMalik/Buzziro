@@ -2,10 +2,10 @@
 
 In the project directory, run :
 
-Terminal 1:  
+Terminal 1: 
 #### npm start    
 
-Terminal 2:  
+Terminal 2:
 #### peerjs --port 3001     
   
   
