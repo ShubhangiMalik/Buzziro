@@ -3,11 +3,11 @@
 In the project directory, run :
 
 Terminal 1:
-  ## npm start  
+npm start    
 
 <br>
 Terminal 2:
-  ## peerjs --port 3001    
+peerjs --port 3001     
 
 
 <br>
