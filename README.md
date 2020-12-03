@@ -4,12 +4,12 @@ In the project directory, run :
 
 Terminal 1:
 <div class="bg-gray">
-  ##npm start  
+  ## npm start  
 </div>
 <br>
 Terminal 2:  
 <div class="bg-gray">
-  ##peerjs --port 3001    
+  ## peerjs --port 3001    
 </div>
 
 <br>
