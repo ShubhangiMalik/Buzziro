@@ -6,7 +6,7 @@ In the project directory, run :
 #### `npm start`    
 
 
-
+___
 
 **Terminal 2:**  
 #### `peerjs --port 3001`     
