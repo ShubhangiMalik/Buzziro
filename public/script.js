@@ -1,7 +1,8 @@
 let chatBox = document.querySelector("#chatBox");
 let right = document.querySelector("#right");
 var modal = $(".modal");
-
+let all = document.querySelector(".all");
+let main = document.querySelector(".main");
 const socket = io('/')
 const videoGrid = document.getElementById('video-grid')
 const myPeer = new Peer(undefined, {
@@ -75,9 +76,32 @@ function connectToNewUser(userId, stream) {
   call.on('close', () => {
     video.remove()
   })
-
+  // leave.addEventListener("click" , (userId) => {
+    
+  //   peers[userId].close();
+    
+  // })
+  
   peers[userId] = call
+  leave.addEventListener("click" , ()=>{
+    leave.classList.toggle("hide");
+    main.classList.toggle("hide");
+    myPeer.destroy([myPeer.destroyed=true]);
+   
+    
+  })
+
+  
 }
+
+myPeer.on('destroy', ()=>{
+  call.close();
+  video.remove();
+ 
+  myPeer.close();
+  
+  
+})
 
 function addVideoStream(video, stream) {
   video.srcObject = stream
@@ -207,7 +231,12 @@ $(function () {
 })
 
 let leave = document.querySelector(".leave");
-function leaveMeeting(){
-  const leave = myPeer.disconnect();
-}
 
+
+let intro=document.querySelector(".intro");
+let launch = document.querySelector(".launch");
+launch.addEventListener("click" , () => {
+  intro.classList.toggle("hide");
+  launch.classList.toggle("hide");
+  main.classList.toggle("hide");
+})
